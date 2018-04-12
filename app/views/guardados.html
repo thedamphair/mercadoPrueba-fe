@@ -1,0 +1,14 @@
+<div class="row"><h1>Lista de Guardados</h1></div>
+<div class="row" ng-repeat="resultado in saved">
+  <div class="col-sm-12">
+    <div class="col-sm-3">
+      <img src="{{resultado.thumbnail}}" alt="foto">
+    </div>
+    <div class="col-sm-9">
+        <h3>{{resultado.title}}</h3>
+        <p>$ {{resultado.price}}</p>
+        <button class="btn btn-primary" ng-click="ver(resultado)">ver</button>
+        <button class="btn btn-danger" ng-click="eliminar(resultado)">Eliminar</button>
+    </div>
+  </div>
+</div>

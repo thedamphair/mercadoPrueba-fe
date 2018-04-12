@@ -1,0 +1,23 @@
+<div class="row center">
+  <div class="col-sm-offset-3 col-sm-3">
+    <input type="text" name="busqueda" id="busqueda" class="form-control" placeholder="ingresa busqueda">
+  </div>
+  <div class="col-sm-3">
+    <button type="submit" class="btn btn-primary">Buscar</button>
+  </div>
+  <div class="col-sm3">
+    <button class="btn btn-success" ng-click="irGuardados()">ver guardados</button>
+  </div>
+</div>
+<div class="row" ng-repeat="resultado in results">
+  <div class="col-sm-12">
+    <div class="col-sm-3">
+      <img src="{{resultado.thumbnail}}" alt="foto">
+    </div>
+    <div class="col-sm-9">
+      <h3>{{resultado.title}}</h3>
+      <p>$ {{resultado.price}}</p>
+      <button class="btn btn-primary" ng-click="guardar(resultado)">Guardar</button>
+    </div>
+  </div>
+</div>
