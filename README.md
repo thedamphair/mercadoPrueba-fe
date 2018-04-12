@@ -1,9 +1,18 @@
-# mercado
+# Mercado Prueba FE
 
-## Build & development
+This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
+version 0.16.0.
 
-Run `grunt` for building and `grunt serve` for preview.
+## Instalación
 
-## Testing
+Ejecutar los comandos `bower install` y `npm i`
 
-Running `grunt test` will run the unit tests with karma.
+## Ejecución
+
+Se utiliza `grunt` con el comando `grunt serve` para levantar el ambiente en el puerto 9000.
+
+### Nota
+
+Se requiere ejecutar el [back-end de Mercado Prueba](https://github.com/thedamphair/mercadoPrueba)
+para el correcto funcionamiento.
+
