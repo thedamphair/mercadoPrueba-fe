@@ -1,9 +1,10 @@
 <div class="row center">
   <div class="col-sm-offset-3 col-sm-3">
-    <input type="text" name="busqueda" id="busqueda" class="form-control" placeholder="ingresa busqueda">
+    <input type="text" name="busqueda" id="busqueda" class="form-control"
+    placeholder="ingresa busqueda" ng-model="cadena">
   </div>
   <div class="col-sm-3">
-    <button type="submit" class="btn btn-primary">Buscar</button>
+    <button type="submit" class="btn btn-primary" ng-click="buscar(cadena)">Buscar</button>
   </div>
   <div class="col-sm3">
     <button class="btn btn-success" ng-click="irGuardados()">ver guardados</button>
@@ -15,9 +16,19 @@
       <img src="{{resultado.thumbnail}}" alt="foto">
     </div>
     <div class="col-sm-9">
-      <h3>{{resultado.title}}</h3>
-      <p>$ {{resultado.price}}</p>
+      <h3 ng-bind-html="resultado.title"></h3>
+      <p>{{resultado.price| currency: $}}</p>
       <button class="btn btn-primary" ng-click="guardar(resultado)">Guardar</button>
     </div>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-sm-offset-4 col-sm-4">
+    <button class="btn btn-default" ng-repeat="pag in paginas"  ng-class="{'btn-primary':actual(pag.id)}">
+      <span href="" ng-click="irPagina(pag.id)">
+        {{pag.id}}
+      </span>
+    </button>
   </div>
 </div>

@@ -81,3 +81,8 @@ body {
     border-bottom: 0;
   }
 }
+
+.pagina-actual {
+  text-decoration: underline;
+  font-weight: bold;
+}

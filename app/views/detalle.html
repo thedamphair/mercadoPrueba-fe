@@ -1,7 +1,6 @@
 <div class="row">
   <div class="col-sm-9">
-    <h2 style="cursor: pointer;" ng-click="goTo()">
-      {{producto.title}}
+    <h2 style="cursor: pointer;" ng-click="goTo(producto.permalink)" ng-bind-html="producto.title">
     </h2>
   </div>
   <div class="col-sm-3">
@@ -10,11 +9,33 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-sm-3" ng-repeat="foto in fotos">
-    <img src="{{foto.url}}" alt="foto" height="150" width="150">
+  <div class="col-sm-1">
+    <a style="cursor: pointer;" ng-click="anterior()">
+      <h1>
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </h1>
+    </a>
+  </div>
+  <div class="col-sm-10 center slider">
+    <img src="{{foto.url}}" alt="foto" ng-repeat="foto in fotos" ng-hide="!indexImagenActual($index)">
+  </div>
+  <div class="col-sm-1">
+    <a style="cursor: pointer;" ng-click="siguiente()">
+      <h1>
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </h1>
+    </a>
   </div>
 </div>
 <div class="row">
-  <h3>Descripcion</h3>
+  <h3>Descripción</h3>
   <p>{{producto.descriptions}}</p>
+</div>
+<div class="row">
+  <h3>Características</h3>
+  <div class="row">
+    <div class="col-sm-4" ng-repeat="atributo in producto.attributes">
+      {{atributo.name}}: {{atributo.value_name}}
+    </div>
+  </div>
 </div>
